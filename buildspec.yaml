@@ -10,14 +10,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t pipeline-bluegreen-test .
-      - docker tag pipeline-bluegreen-test:latest 241544632021.dkr.ecr.ap-northeast-2.amazonaws.com/pipeline-bluegreen-test:latest
+      - docker build -t node-sample .
+      - docker tag node-sample:latest 241544632021.dkr.ecr.ap-northeast-2.amazonaws.com/node-sample:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 241544632021.dkr.ecr.ap-northeast-2.amazonaws.com/pipeline-bluegreen-test:latest
-      - echo Writing image definitions file...
-      - printf '[{"name":"%s","imageUri":"%s"}]' pipeline-bluegreen-test 241544632021.dkr.ecr.ap-northeast-2.amazonaws.com/pipeline-bluegreen-test:latest > imagedefinitions.json
-artifacts:
-    files: imagedefinitions.json
+      - docker push 241544632021.dkr.ecr.ap-northeast-2.amazonaws.com/node-sample:latest

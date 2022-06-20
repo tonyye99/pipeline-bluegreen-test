@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:ap-northeast-2:241544632021:task-definition/codepipeline-bluegreen-test:1"
+        TaskDefinition: "arn:aws:ecs:ap-northeast-2:241544632021:task-definition/node-sample:1"
         LoadBalancerInfo:
-          ContainerName: "pipeline-bluegreen-test"
+          ContainerName: "node-sample"
           ContainerPort: 3000

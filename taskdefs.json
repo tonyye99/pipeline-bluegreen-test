@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/codepipeline-bluegreen-test",
+          "awslogs-group": "/ecs/node-sample",
           "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
         }
@@ -37,7 +37,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "241544632021.dkr.ecr.ap-northeast-2.amazonaws.com/pipeline-bluegreen-test:latest",
+      "image": "241544632021.dkr.ecr.ap-northeast-2.amazonaws.com/node-sample:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -54,18 +54,18 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "pipeline-bluegreen-test"
+      "name": "node-sample"
     }
   ],
   "placementConstraints": [],
-  "memory": "1024",
+  "memory": "512",
   "taskRoleArn": "arn:aws:iam::241544632021:role/ecsTaskExecutionRole",
   "compatibilities": [
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:241544632021:task-definition/codepipeline-bluegreen-test:2",
-  "family": "codepipeline-bluegreen-test",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:241544632021:task-definition/node-sample:1",
+  "family": "node-sample",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -125,8 +125,8 @@
     "operatingSystemFamily": "LINUX",
     "cpuArchitecture": null
   },
-  "cpu": "512",
-  "revision": 2,
+  "cpu": "256",
+  "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
